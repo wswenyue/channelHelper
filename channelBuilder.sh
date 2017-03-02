@@ -14,7 +14,7 @@ do
     echo ${arr[0]}
     echo ${arr[1]}
 
-    java -jar ./support/walle-cli-all.jar put -c ${arr[0]} ./app.apk ./out/${appName}-${arr[1]}-${buildType}-v${versionName}-${versionCode}-${buildTime}.apk
+    java -jar ./support/walle-cli-all.jar put -c ${arr[0]} ./${signedApp} ./out/${appName}-${arr[1]}-${buildType}-v${versionName}-${versionCode}-${buildTime}.apk
 
     echo "----${arr[0]}_${arr[1]}----ok"
 
