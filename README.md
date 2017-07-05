@@ -1,25 +1,48 @@
-# channelHelper
-###基于[walle](https://github.com/Meituan-Dianping/walle)工具的多渠道打包脚本
+# channelHelper V2.0
+### 基于[walle](https://github.com/Meituan-Dianping/walle)工具的多渠道打包脚本
 
-###使用本脚本需要注意：
-- 按照config.sh文件中的注释改成自己项目配置
-- 替换要写入渠道的包，一般是你打好的release包。这个apk要放到当前目录下覆盖signedapp.apk就可以
-- 替换使用360加固过，未签名的包【不要使用360的签名工具签名】。这个apk要放在360目录下覆盖jiagu.apk就好
-- 替换签名文件，这个文件要放在support目录下，覆盖signKey.jks就好
-- 各种渠道的定义是在channel.txt这个文件中，格式为：渠道号#渠道名称。这个需要你根据项目情况修改。
+### 使用本脚本需要注意：
+- 只需要关心 `in` 文件下的配置
+- `channel.txt` 是渠道编号对应的配置文件，请根据自己需求配置
+- `config.sh` 是主要的配置文件，具体请根据相关注释修改
+- `jiagu.apk` 是用360加固宝加固过的apk，未签名
+- `release.keystore` 是使用的签名key文件
+- `signedapp.apk` 是生成的签名过的app包文件
 
 ### 使用方法
 > 打普通渠道包
 
 ```bash
-$ cd channelHelpe/
-$ sh ./channelBuilder.sh
+$ cd channelHelper/
+$ sh ./builder.sh 
 ```
-> 打360渠道包
+
+> 只打打360渠道包
 
 ```bash
-$ cd channelHelper/360/
-$ sh ./channelFor360.sh
+$ cd channelHelper/
+$ sh ./builder.sh 360
+```
+
+> 打所有渠道（包括360）
+
+```bash
+$ cd channelHelper/
+$ sh ./builder.sh all
+```
+
+> 清空输出文件夹
+
+```bash
+$ cd channelHelper/
+$ sh ./builder.sh clean
+```
+
+> 查看帮助
+
+```bash
+$ cd channelHelper/
+$ sh ./builder.sh help
 ```
 
 ### Support
