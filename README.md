@@ -17,7 +17,7 @@ $ cd channelHelper/
 $ sh ./builder.sh 
 ```
 
-> 只打打360渠道包
+> 只打360渠道包
 
 ```bash
 $ cd channelHelper/
@@ -45,5 +45,8 @@ $ cd channelHelper/
 $ sh ./builder.sh help
 ```
 
+### 注意该工具是直接可以跑通的。不需要任何处理
+
 ### Support
+欢迎各位给我提供使用意见
 如遇到walle错误请参考https://github.com/Meituan-Dianping/walle 
